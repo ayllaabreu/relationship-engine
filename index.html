@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relationship Engine</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
 
+<body>
+
+<div class="overlay"></div>
+
+<div class="terminal fade-in">
+  <div id="typing"></div>
+</div>
+
+<section class="counter fade-in">
+  <h2>System Uptime</h2>
+  <div id="timeTogether"></div>
+</section>
+
+<section class="timeline fade-in">
+  <h2>Changelog</h2>
+  <ul>
+    <li>v0.1 – Primeira conversa</li>
+    <li>v0.5 – Primeiro encontro</li>
+    <li>v1.0 – Relationship deployed (04/04/2025)</li>
+    <li>v1.5 – Bugs resolvidos juntos</li>
+    <li>v2.0 – 1 year stable release ❤️</li>
+  </ul>
+</section>
+
+<section class="gallery fade-in">
+  <h2>Memory Archive</h2>
+  <div class="grid">
+    <img src="images/foto1.jpg" onclick="openLightbox(this.src)">
+    <img src="images/foto2.jpg" onclick="openLightbox(this.src)">
+    <img src="images/foto3.jpg" onclick="openLightbox(this.src)">
+    <img src="images/foto4.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<section class="core fade-in">
+  <h2>Core System</h2>
+  <pre>
+const relationshipCore = {
+  partner1: "Aylla",
+  partner2: "Bruno",
+  startDate: "04/04/2025",
+  status: "stable",
+  loveLevel: Infinity,
+  resilience: true
+}
+  </pre>
+</section>
+
+<footer class="fade-in">
+  <p>Stable Release Since 04.04.2025</p>
+  <button id="musicToggle">Play Music 🎵</button>
+</footer>
+
+<audio id="bgMusic" loop>
+  <source src="audio/music.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,1 +1,110 @@
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #00ff88;
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+  overflow-x: hidden;
+}
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,255,136,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+h2 {
+  margin-top: 80px;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+.terminal {
+  padding: 80px 20px;
+  font-size: 18px;
+  min-height: 200px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 12px 0;
+}
+
+pre {
+  background-color: rgba(30,41,59,0.7);
+  padding: 20px;
+  display: inline-block;
+  text-align: left;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00ff88;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00ff88;
+  color: #020617;
+}
+
+/* Fade-in Animation */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
