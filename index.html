@@ -1,69 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aylla & Bruno</title>
+  <meta charset="UTF-8">
+  <title>Nossa História</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="intro" id="intro">
-  <div class="intro-content">
-    <h1 id="cinemaTitle"></h1>
-    <p class="intro-sub">An Original Love Story</p>
-    <button id="skipIntro">Pular Intro</button>
-  </div>
-</div>
+  <!-- INTRO CINEMATOGRÁFICA -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="titulo">A História que Começou Antes do Deploy</h1>
+      <p class="subtitulo">
+        Tudo começou em 18/07/2024.<br>
+        O commit mais importante da minha vida.
+      </p>
+      <button id="btnEntrar">Entrar na história</button>
+    </div>
+  </section>
 
-<canvas id="particles"></canvas>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo" class="hidden">
 
-<div class="container aylla" id="card">
+    <section class="historia">
+      <h2>Capítulo 1 — O Primeiro Encontro</h2>
+      <p>
+        Em 21/11/2024, no Shopping Bela Vista, algo mudou.
+        Para mim, ali começou oficialmente nossa história.
+      </p>
 
-<h1 class="titulo-principal">Aylla & Bruno</h1>
-<p class="sub-romantico">uma história que começou antes do deploy oficial</p>
-<p class="subtitle">Build: Forever 1.0 💍</p>
+      <h2>Capítulo 2 — O Chamado Oficial</h2>
+      <p>
+        Para ele, tudo começou apenas quando o chamado foi aberto em 04/04/2025.
+        Versão técnica. Documentada. Auditável.
+      </p>
+    </section>
 
-<div class="timeline">
-<p>💬 Primeiro commit: 18/07/2024</p>
-<p>✨ Primeiro encontro: 21/11/2024 — Shopping Bela Vista</p>
-<p>📩 Abertura oficial do chamado: 04/04/2025</p>
-</div>
+    <!-- CONTADORES DUPLOS -->
+    <section class="contadores">
 
-<div class="contador-area">
-<div class="contador-box">
-<h3>🩷 Versão Aylla</h3>
-<p id="contadorAylla"></p>
-</div>
+      <div class="card-contador">
+        <h3>📌 Minha versão (21/11/2024)</h3>
+        <div class="tempo" id="contadorEla">
+          <span><b id="diasEla">0</b> dias</span>
+          <span><b id="horasEla">0</b> h</span>
+          <span><b id="minEla">0</b> min</span>
+          <span><b id="segEla">0</b> s</span>
+        </div>
+      </div>
 
-<div class="contador-box">
-<h3>💙 Versão Oficial dele</h3>
-<p id="contadorOficial"></p>
-</div>
-</div>
+      <div class="card-contador">
+        <h3>🧾 Versão dele (04/04/2025)</h3>
+        <div class="tempo" id="contadorEle">
+          <span><b id="diasEle">0</b> dias</span>
+          <span><b id="horasEle">0</b> h</span>
+          <span><b id="minEle">0</b> min</span>
+          <span><b id="segEle">0</b> s</span>
+        </div>
+      </div>
 
-<button onclick="alternarVersao()">Alternar versão</button>
+    </section>
 
-<p id="mensagemHumor">
-Conflito de versionamento detectado. Ambas as versões são válidas.
-</p>
+    <section class="final">
+      <p>
+        Independente da versão…
+      </p>
+      <h2>O que importa é que estamos juntos.</h2>
+    </section>
 
-<div class="galeria">
-<img src="fotos/foto1.jpg">
-<img src="fotos/foto2.jpg">
-<img src="fotos/foto3.jpg">
-</div>
+  </main>
 
-</div>
-
-<audio id="bgMusic" loop>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
