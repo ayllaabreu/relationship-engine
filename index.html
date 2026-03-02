@@ -5,76 +5,85 @@
     <title>Aylla & Bruno | Bodas de Milagre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- FONTES OBRA-PRIMA EQUILIBRADA -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- MENU -->
-    <nav>
-        <ul>
-            <li><a href="#home">home()</a></li>
-            <li><a href="#historia">historia.js</a></li>
-            <li><a href="#memorias">memorias.png</a></li>
-            <li><a href="#motivos">motivos.json</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#home">home()</a></li>
+        <li><a href="#historia">historia.js</a></li>
+        <li><a href="#memorias">memorias.png</a></li>
+        <li><a href="#motivos">motivos.json</a></li>
+        <li><a href="#forever">forever.exe</a></li>
+    </ul>
+</nav>
 
-    <!-- MÚSICA -->
-    <audio id="bgMusic" loop>
-        <source src="music/romance.mp3" type="audio/mp3">
-    </audio>
+<audio id="bgMusic" loop>
+    <source src="music/romance.mp3" type="audio/mp3">
+</audio>
 
-    <!-- HOME -->
-    <section id="home" class="parallax">
-        <h1>1 Ano de Milagre 💖</h1>
-        <p>Desde que você entrou no meu sistema, nada mais foi bug… só upgrade.</p>
-        <div class="counter" id="counter"></div>
-        <button class="forever-btn" onclick="forever()">forever.exe</button>
-    </section>
+<!-- HOME -->
+<section id="home" class="parallax">
+    <h1>Aylla & Bruno</h1>
+    <p class="subtitle">Bodas de Milagre • 1 Ano de Amor</p>
+    <div class="counter" id="counter"></div>
+</section>
 
-    <!-- HISTÓRIA -->
-    <section id="historia">
-        <h1>Nossa História</h1>
-        <p>
-            Tudo começou oficialmente para mim em 21/11/2024… <br>
-            Para você, no deploy oficial de 04/04/2025… <br>
-            Mas a verdade? Desde 18/07/2024 o código já estava rodando em background.
-        </p>
-    </section>
+<!-- HISTÓRIA -->
+<section id="historia">
+    <h2>Nossa História</h2>
+    <p>
+        Tudo começou oficialmente para mim em 21/11/2024.<br>
+        Para você, o deploy foi em 04/04/2025.<br><br>
+        Mas desde 18/07/2024 o código já rodava em background.
+    </p>
+</section>
 
-    <!-- MEMÓRIAS -->
-    <section id="memorias">
-        <h1>Memórias</h1>
-        <div class="gallery">
-            <div>Nosso primeiro encontro — versão presencial 1.0</div>
-            <div>Risadas que ecoam até hoje</div>
-            <div>Olhares que não precisam de Wi-Fi</div>
-            <div>Momentos simples que viraram eternos</div>
-        </div>
-    </section>
+<!-- MEMÓRIAS -->
+<section id="memorias">
+    <h2>Memórias</h2>
+    <div class="gallery">
+        <div>Nosso primeiro encontro — versão presencial 1.0</div>
+        <div>Risadas que ecoam até hoje</div>
+        <div>Olhares que não precisam de Wi-Fi</div>
+        <div>Momentos simples que viraram eternos</div>
+    </div>
+</section>
 
-    <!-- MOTIVOS -->
-    <section id="motivos">
-        <h1>motivos.json</h1>
-        <div class="motivos">
-            1. Porque você me entende até nos meus bugs.<br>
-            2. Porque sua risada é meu som favorito.<br>
-            3. Porque você é meu programador favorito.<br>
-            4. Porque seu abraço é meu firewall.<br>
-            5. Porque você me desafia a ser melhor.<br>
-            6. Porque somos palhaços juntos.<br>
-            7. Porque você é meu porto seguro.<br>
-            8. Porque cada dia contigo é patch de felicidade.<br>
-            9. Porque você me escolhe todos os dias.<br>
-            10. Porque você é meu forever.exe.
-        </div>
-    </section>
+<!-- MOTIVOS -->
+<section id="motivos">
+    <h2>motivos.json</h2>
+    <div class="motivos">
+        1. Você entende meus bugs.<br>
+        2. Sua risada é meu som favorito.<br>
+        3. Seu abraço é meu firewall.<br>
+        4. Você me desafia a evoluir.<br>
+        5. Somos palhaços juntos.<br>
+        6. Você é meu porto seguro.<br>
+        7. Cada dia é patch de felicidade.<br>
+        8. Você me escolhe todos os dias.<br>
+        9. Você é meu melhor deploy.<br>
+        10. Você é meu forever.exe.
+    </div>
+</section>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+<!-- FOREVER FINAL -->
+<section id="forever" class="forever-section">
+    <button class="forever-btn" onclick="forever()">executar forever.exe</button>
+</section>
+
+<!-- OVERLAY -->
+<div id="foreverOverlay" class="forever-overlay">
+    <div class="forever-terminal">
+        <div id="foreverText"></div>
+        <button onclick="closeForever()" class="close-btn">fechar.exe</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
