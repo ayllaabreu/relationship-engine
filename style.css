@@ -5,14 +5,13 @@
 }
 
 body {
-  background: #0f0f12;
+  background: linear-gradient(180deg, #0f0f12, #151522);
   color: #f4f4f4;
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
 }
 
 /* HERO */
-
 .hero {
   height: 100vh;
   background: linear-gradient(120deg, #1a1a2e, #16213e, #0f3460);
@@ -27,20 +26,18 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
+  background: radial-gradient(circle at center, rgba(255,192,203,0.1), transparent 70%);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  animation: fadeIn 2s ease forwards;
 }
 
 .titulo {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 800;
-  letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
@@ -52,50 +49,71 @@ body {
 
 button {
   padding: 12px 30px;
-  background: linear-gradient(45deg, #e94560, #ff6f91);
+  background: linear-gradient(45deg, #a4161a, #ff6b6b);
   border: none;
   border-radius: 30px;
   color: white;
-  font-size: 1rem;
   cursor: pointer;
   transition: 0.4s ease;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(233,69,96,0.6);
+  box-shadow: 0 0 25px rgba(255,107,107,0.6);
 }
 
-/* MAIN */
+/* CAPÍTULOS */
 
-main {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  animation: fadeIn 1.5s ease forwards;
+.capitulo {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 10%;
 }
 
-.hidden {
-  display: none;
+.capitulo-conteudo {
+  max-width: 600px;
 }
 
-.historia h2 {
+.numero {
+  color: #d4af37;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.capitulo h2 {
   font-family: 'Playfair Display', serif;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  margin: 10px 0 20px 0;
 }
 
-.historia p {
+.capitulo p {
   font-size: 1.2rem;
-  opacity: 0.9;
   line-height: 1.6;
+  opacity: 0.9;
+}
+
+.destaque {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #ffb3c1;
+}
+
+/* Alternância */
+
+.esquerda {
+  justify-content: flex-start;
+}
+
+.direita {
+  justify-content: flex-end;
+  text-align: right;
 }
 
 /* CONTADORES */
 
 .contadores {
-  margin-top: 80px;
+  padding: 100px 10%;
   display: grid;
   gap: 40px;
 }
@@ -104,18 +122,13 @@ main {
   background: rgba(255,255,255,0.05);
   padding: 30px;
   border-radius: 20px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   box-shadow: 0 0 40px rgba(0,0,0,0.5);
   transition: 0.4s ease;
 }
 
 .card-contador:hover {
   transform: translateY(-8px);
-}
-
-.card-contador h3 {
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
 }
 
 .tempo {
@@ -134,18 +147,27 @@ main {
 
 .final {
   text-align: center;
-  margin-top: 100px;
+  padding: 100px 20px;
 }
 
 .final h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  margin-top: 10px;
 }
 
-/* ANIMAÇÃO */
+/* REVEAL ANIMATION */
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s ease;
+}
+
+.reveal.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
 }
