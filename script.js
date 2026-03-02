@@ -1,12 +1,7 @@
-// ===== CONFIGURE A DATA INICIAL AQUI =====
-const dataInicio = new Date("2023-01-01T00:00:00");
-
-// ==========================================
+const dataInicio = new Date("2023-01-01T00:00:00"); // ajuste sua data real
 
 function atualizarContador(){
-
     const agora = new Date();
-
     const diferenca = agora - dataInicio;
 
     const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
@@ -17,13 +12,10 @@ function atualizarContador(){
     const contador = document.getElementById("contador");
 
     if(contador){
-        contador.innerHTML = 
+        contador.innerHTML =
         `${dias} dias ${horas}h ${minutos}m ${segundos}s`;
     }
 }
 
-// Atualiza a cada segundo
 setInterval(atualizarContador, 1000);
-
-// Executa imediatamente ao carregar
 atualizarContador();
