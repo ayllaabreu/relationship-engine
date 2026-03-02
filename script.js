@@ -1,4 +1,4 @@
-/* CONTADOR DUPLO */
+/* CONTADOR */
 const start1 = new Date("2024-11-21T00:00:00");
 const start2 = new Date("2025-04-04T00:00:00");
 
@@ -11,14 +11,14 @@ function updateCounter(){
     const days2 = Math.floor(diff2/(1000*60*60*24));
 
     document.getElementById("counter").innerHTML =
-    `Desde 21/11/2024: ${days1} dias juntos 💕 <br>
-     Desde 04/04/2025: ${days2} dias oficiais 💍`;
+    `Desde 21/11/2024: ${days1} dias juntos 💕<br>
+         Desde 04/04/2025: ${days2} dias oficiais 💍`;
 }
 
 setInterval(updateCounter,1000);
 updateCounter();
 
-/* MÚSICA COM FADE PROFISSIONAL */
+/* MÚSICA */
 const music = document.getElementById("bgMusic");
 let started = false;
 
@@ -38,10 +38,41 @@ function startMusic(){
         started = true;
     }
 }
-
 document.addEventListener("click", startMusic);
 
 /* FOREVER */
+const overlay = document.getElementById("foreverOverlay");
+const foreverText = document.getElementById("foreverText");
+
+function typeWriter(text, speed = 35){
+    let i = 0;
+    foreverText.innerHTML = "";
+    function typing(){
+        if(i < text.length){
+            foreverText.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+    typing();
+}
+
 function forever(){
-    alert("Processando eternidade...\nInstalando amor infinito...\nStatus: Concluído ❤️");
+    overlay.classList.add("active");
+
+    const scriptText = `
+> Executando forever.exe...
+> Inicializando AmorInfinito.dll
+> Verificando compatibilidade...
+> 100% Alma Gêmea detectada
+> Sincronizando batimentos...
+> Conexão permanente estabelecida ❤️
+> Status: Eternidade ativada
+`;
+
+    typeWriter(scriptText);
+}
+
+function closeForever(){
+    overlay.classList.remove("active");
 }
