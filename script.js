@@ -1,51 +1,47 @@
-let chapters = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 let current = 0;
 
 function startStory() {
     document.getElementById("bgMusic").play();
-    showChapter(1);
+    showSection(1);
 }
 
-function showChapter(index) {
-    chapters.forEach(sec => sec.classList.remove("active"));
-    chapters[index].classList.add("active");
+function showSection(index) {
+    sections.forEach(sec => sec.classList.remove("active"));
+    sections[index].classList.add("active");
     current = index;
 }
 
 function nextChapter() {
-    if (current < chapters.length - 1) {
-        showChapter(current + 1);
+    if (current < sections.length - 1) {
+        showSection(current + 1);
     }
 }
 
 function prevChapter() {
     if (current > 0) {
-        showChapter(current - 1);
+        showSection(current - 1);
     }
 }
 
 function toggleMusic() {
     const music = document.getElementById("bgMusic");
-    if (music.paused) {
-        music.play();
-    } else {
-        music.pause();
-    }
+    music.paused ? music.play() : music.pause();
 }
 
 /* CONTADORES */
-function updateCounter(id, startDate) {
+function updateCounter(id, date) {
     const element = document.getElementById(id);
     setInterval(() => {
         const now = new Date();
-        const diff = now - new Date(startDate);
+        const diff = now - new Date(date);
 
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
 
-        element.innerHTML = `${days} dias ${hours}h ${minutes}m ${seconds}s`;
+        element.innerHTML = `${days} dias • ${hours}h • ${minutes}m • ${seconds}s`;
     }, 1000);
 }
 
@@ -61,6 +57,6 @@ document.addEventListener("touchstart", e => {
 
 document.addEventListener("touchend", e => {
     let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextChapter();
-    if (endX - startX > 50) prevChapter();
+    if (startX - endX > 60) nextChapter();
+    if (endX - startX > 60) prevChapter();
 });
