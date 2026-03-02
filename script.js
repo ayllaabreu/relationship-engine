@@ -171,3 +171,43 @@ document.getElementById("menu-memorias").addEventListener("click",()=>{
 document.getElementById("menu-motivos").addEventListener("click",()=>{
     alert("❤️ 10 razões para amar você.");
 });
+
+/* ===============================
+   MENU PROFISSIONAL DEFINITIVO
+=============================== */
+
+document.querySelectorAll(".menu-romantico li[data-target]")
+.forEach(item=>{
+    item.addEventListener("click",()=>{
+
+        const target=item.dataset.target;
+        const section=document.getElementById(target);
+
+        if(section){
+            section.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+
+    });
+});
+
+/* ===============================
+   FOREVER.EXE EASTER EGG
+=============================== */
+
+document.getElementById("forever-btn").addEventListener("click",()=>{
+
+    document.body.style.transition="2s";
+    document.body.style.filter="brightness(1.3) blur(2px)";
+
+    setTimeout(()=>{
+        alert("💖 Compilando destino...\nVocê + Bruno = infinito.");
+    },800);
+
+    setTimeout(()=>{
+        document.body.style.filter="none";
+    },2000);
+
+});
