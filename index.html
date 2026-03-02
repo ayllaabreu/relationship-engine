@@ -3,57 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nossa História</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Aylla & Bruno</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- MÚSICA -->
 <audio id="bgMusic" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div class="music-control" onclick="toggleMusic()">
-    ♫
-</div>
+<div class="music-control" onclick="toggleMusic()">♫</div>
 
-<!-- INTRO -->
 <section class="intro active">
-    <h1 class="title">Nossa História</h1>
-    <p class="subtitle">A história que começou antes do deploy...</p>
-    <button class="start-btn" onclick="startStory()">Assistir</button>
+    <div class="glass">
+        <h1 class="main-title">Aylla & Bruno</h1>
+        <p class="subtitle">A história que começou antes do deploy...</p>
+        <button class="start-btn" onclick="startStory()">Assistir</button>
+    </div>
 </section>
 
-<!-- CAPÍTULOS -->
 <section class="chapter">
-    <div class="content">
-        <h2>Capítulo 1</h2>
-        <p>Quando eu considero que tudo começou: 21/11/2024</p>
+    <div class="glass">
+        <h2>Capítulo I</h2>
+        <p>Quando eu considero que tudo começou<br><strong>21/11/2024</strong></p>
         <div class="counter" id="counter1"></div>
     </div>
 </section>
 
 <section class="chapter">
-    <div class="content">
-        <h2>Capítulo 2</h2>
-        <p>Quando você decidiu oficialmente: 04/04/2025</p>
+    <div class="glass">
+        <h2>Capítulo II</h2>
+        <p>Quando você oficializou<br><strong>04/04/2025</strong></p>
         <div class="counter" id="counter2"></div>
     </div>
 </section>
 
 <section class="chapter">
-    <div class="content">
-        <h2>Capítulo 3</h2>
-        <p>No final, pouco importa a data.<br>
-        O que importa é que a gente escolhe continuar.</p>
+    <div class="glass">
+        <h2>Capítulo III</h2>
+        <p>No fim, pouco importa a data.<br>
+        O que importa é que escolhemos continuar.</p>
     </div>
 </section>
 
-<!-- CONTROLES -->
 <div class="nav-buttons">
     <button onclick="prevChapter()">Voltar</button>
     <button onclick="nextChapter()">Avançar</button>
