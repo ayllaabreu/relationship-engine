@@ -1,99 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Aylla & Bruno | Bodas de Milagre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aylla & Bruno</title>
 
-    <!-- FONTES OBRA-PRIMA EQUILIBRADA -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<nav>
-    <ul>
-        <li><a href="#home">home()</a></li>
-        <li><a href="#historia">historia.js</a></li>
-        <li><a href="#memorias">memorias.png</a></li>
-        <li><a href="#motivos">motivos.json</a></li>
-        <li><a href="#forever">forever.exe</a></li>
-    </ul>
-</nav>
+<div class="progress-bar"></div>
+<div class="chapter-bar"></div>
+<div class="page-transition"></div>
 
-<audio id="bgMusic" loop>
-    <source src="music/romance.mp3" type="audio/mp3">
-</audio>
-
-<!-- HOME -->
-<section id="home" class="parallax">
+<header class="hero">
     <h1>Aylla & Bruno</h1>
-    <p class="subtitle">Bodas de Milagre • 1 Ano de Amor</p>
-    <div class="counter" id="counter"></div>
-</section>
+    <button id="foreverBtn" class="forever-btn">forever.exe</button>
+</header>
 
-<!-- HISTÓRIA -->
-<section id="historia">
-    <h2>Nossa História</h2>
-    <p>
-        Tudo começou oficialmente para mim em 21/11/2024.<br>
-        Para você, o deploy foi em 04/04/2025.<br><br>
-        Mas desde 18/07/2024 o código já rodava em background.
-    </p>
-</section>
-
-<!-- MEMÓRIAS -->
-<section id="memorias" class="gallery-section">
-    <h2 class="section-title">Memórias</h2>
-
+<section class="chapter active" id="cap1">
+    <h2>História</h2>
     <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/foto1.webp" alt="Aylla e Bruno 1" loading="lazy">
-        </div>
-
-        <div class="gallery-item">
-            <img src="images/foto2.webp" alt="Aylla e Bruno 2" loading="lazy">
-        </div>
-
-        <div class="gallery-item">
-            <img src="images/foto3.webp" alt="Aylla e Bruno 3" loading="lazy">
-        </div>
-
-        <div class="gallery-item">
-            <img src="images/foto4.webp" alt="Aylla e Bruno 4" loading="lazy">
-        </div>
+        <img src="images/foto1.webp" class="lightbox-trigger">
+        <img src="images/foto2.webp" class="lightbox-trigger">
     </div>
 </section>
 
-<!-- MOTIVOS -->
-<section id="motivos">
-    <h2>motivos.json</h2>
-    <div class="motivos">
-        1. Você entende meus bugs.<br>
-        2. Sua risada é meu som favorito.<br>
-        3. Seu abraço é meu firewall.<br>
-        4. Você me desafia a evoluir.<br>
-        5. Somos palhaços juntos.<br>
-        6. Você é meu porto seguro.<br>
-        7. Cada dia é patch de felicidade.<br>
-        8. Você me escolhe todos os dias.<br>
-        9. Você é meu melhor deploy.<br>
-        10. Você é meu forever.exe.
+<section class="chapter" id="cap2">
+    <h2>Memórias</h2>
+    <div class="gallery">
+        <img src="images/foto3.webp" class="lightbox-trigger">
+        <img src="images/foto4.webp" class="lightbox-trigger">
     </div>
 </section>
 
-<!-- FOREVER FINAL -->
-<section id="forever" class="forever-section">
-    <button class="forever-btn" onclick="forever()">executar forever.exe</button>
+<section class="chapter" id="cap3">
+    <h2>Motivos</h2>
+    <p>Porque o amor verdadeiro não é acaso. É destino.</p>
 </section>
 
-<!-- OVERLAY -->
-<div id="foreverOverlay" class="forever-overlay">
-    <div class="forever-terminal">
-        <div id="foreverText"></div>
-        <button onclick="closeForever()" class="close-btn">fechar.exe</button>
-    </div>
+<div class="chapter-controls">
+    <button id="prev">←</button>
+    <button id="next">→</button>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox">
+    <span class="close-lightbox">✕</span>
+    <img class="lightbox-img">
 </div>
 
 <script src="script.js"></script>
