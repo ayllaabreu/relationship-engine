@@ -5,10 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aylla & Bruno</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<div class="intro" id="intro">
+<h1>Aylla & Bruno</h1>
+<p>Loading relationship system...</p>
+</div>
+
+<canvas id="particles"></canvas>
 
 <div class="background"></div>
 
@@ -19,19 +26,26 @@
 
 <div class="timeline">
 <p>💬 Primeiro commit: 18/07/2024</p>
-<p>✨ Primeiro encontro: 21/11/2024 — Shopping Bela Vista, Salvador</p>
+<p>✨ Primeiro encontro: 21/11/2024 — Shopping Bela Vista</p>
 <p>📩 Abertura oficial do chamado: 04/04/2025</p>
 </div>
 
 <div class="contador-area">
-<div id="contadorAylla"></div>
-<div id="contadorOficial"></div>
+<div class="contador-box">
+<h3>🩷 Versão Aylla</h3>
+<p id="contadorAylla"></p>
 </div>
 
-<button onclick="alternarVersao()">Alternar versão do sistema</button>
+<div class="contador-box">
+<h3>💙 Versão Oficial dele</h3>
+<p id="contadorOficial"></p>
+</div>
+</div>
+
+<button onclick="alternarVersao()">Alternar versão</button>
 
 <p id="mensagemHumor">
-Conflito de versionamento detectado. Ambas as versões são válidas. 💞
+Conflito de versionamento detectado. Ambas as versões são válidas.
 </p>
 
 <div class="galeria">
@@ -42,11 +56,10 @@ Conflito de versionamento detectado. Ambas as versões são válidas. 💞
 
 </div>
 
-<audio autoplay loop>
+<audio id="bgMusic" loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script src="script.js"></script>
-
 </body>
 </html>
