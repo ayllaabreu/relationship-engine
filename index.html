@@ -1,66 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aylla & Bruno</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aylla & Bruno</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="intro" id="intro">
-<h1>Aylla & Bruno</h1>
-<p>Loading relationship system...</p>
-</div>
+    <div class="overlay"></div>
 
-<canvas id="particles"></canvas>
+    <div class="container">
+        <h1 class="titulo-principal">Aylla & Bruno</h1>
+        <p class="sub-romantico">uma história que começou antes do deploy oficial</p>
+        <p class="subtitle">Build: Forever 1.0 💍</p>
 
-<div class="background"></div>
+        <div id="contador"></div>
+    </div>
 
-<div class="container" id="card">
+    <!-- Script -->
+    <script src="script.js"></script>
 
-<h1>Aylla & Bruno</h1>
-<p class="subtitle">Build: Forever 1.0 💍</p>
-
-<div class="timeline">
-<p>💬 Primeiro commit: 18/07/2024</p>
-<p>✨ Primeiro encontro: 21/11/2024 — Shopping Bela Vista</p>
-<p>📩 Abertura oficial do chamado: 04/04/2025</p>
-</div>
-
-<div class="contador-area">
-<div class="contador-box">
-<h3>🩷 Versão de Aylla</h3>
-<p id="contadorAylla"></p>
-</div>
-
-<div class="contador-box">
-<h3>💙 Versão de Bruno</h3>
-<p id="contadorOficial"></p>
-</div>
-</div>
-
-<button onclick="alternarVersao()">Alternar versão</button>
-
-<p id="mensagemHumor">
-Conflito de versionamento detectado. Ambas as versões são válidas.
-</p>
-
-<div class="galeria">
-<img src="fotos/foto1.jpg">
-<img src="fotos/foto2.jpg">
-<img src="fotos/foto3.jpg">
-</div>
-
-</div>
-
-<audio id="bgMusic" loop>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
 </body>
 </html>
-
