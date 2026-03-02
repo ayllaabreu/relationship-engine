@@ -1,170 +1,116 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #000;
-  color: #fff;
-  font-family: 'Cormorant Garamond', serif;
-  overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    color: white;
+    overflow: hidden;
 }
 
-/* INTRO NETFLIX */
+section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.active {
+    display: flex;
+}
 
 .intro {
-  height: 100vh;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: introFade 4s forwards;
+    flex-direction: column;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
-.netflix-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 4rem;
-  letter-spacing: 10px;
-  color: #e50914;
-  text-shadow: 0 0 20px #e50914, 0 0 60px #e50914;
-  animation: glow 2s ease-in-out infinite alternate;
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #e50914; }
-  to { text-shadow: 0 0 40px #ff1e2d; }
+.subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    opacity: 0.7;
 }
 
-@keyframes introFade {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
+.start-btn {
+    margin-top: 40px;
+    padding: 12px 30px;
+    border: none;
+    background: #e50914;
+    color: white;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* TOPO */
-
-.topo {
-  text-align: center;
-  padding: 100px 20px 60px 20px;
+.start-btn:hover {
+    transform: scale(1.1);
 }
 
-.topo h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+.chapter {
+    flex-direction: column;
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
 }
 
-.topo p {
-  opacity: 0.7;
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-/* TIMELINE */
-
-.timeline {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  padding: 50px 0;
+.content p {
+    font-size: 1.1rem;
+    opacity: 0.8;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  width: 3px;
-  background: #e50914;
-  top: 0;
-  bottom: 0;
-  transform: translateX(-50%);
+.counter {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
-.evento {
-  position: relative;
-  width: 50%;
-  padding: 40px;
+.nav-buttons {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.evento:nth-child(odd) {
-  left: 0;
-  text-align: right;
+.nav-buttons button {
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #ffffff10;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
-.evento:nth-child(even) {
-  left: 50%;
+.nav-buttons button:hover {
+    background: #ffffff30;
 }
 
-.marcador {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background: #e50914;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 15px #e50914;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.data {
-  font-size: 0.9rem;
-  color: #e50914;
-  letter-spacing: 2px;
-}
-
-/* CONTADORES */
-
-.contadores {
-  width: 80%;
-  margin: 100px auto;
-  display: grid;
-  gap: 40px;
-}
-
-.contador-card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-}
-
-.tempo {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
-
-.tempo span b {
-  font-size: 1.5rem;
-  display: block;
-}
-
-/* REVEAL */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 1s ease;
-}
-
-.reveal.ativo {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hidden {
-  display: none;
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
 }
