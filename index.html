@@ -4,58 +4,456 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aylla & Bruno</title>
+<title>Bodas de Milagre — Aylla & Bruno</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background: linear-gradient(135deg,#0d0d0d,#1a001f);
+    color:white;
+    font-family:'JetBrains Mono', monospace;
+    overflow-x:hidden;
+}
+
+/* =========================
+   CINEMATIC INTRO
+========================= */
+
+#cinematic-intro{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:10000;
+    animation:introFade 4s ease forwards;
+}
+
+.intro-text{
+    text-align:center;
+    color:#ffb3ec;
+    font-family:'Playfair Display', serif;
+    text-shadow:0 0 30px rgba(255,102,196,.8);
+}
+
+.intro-text h1{
+    font-size:60px;
+    letter-spacing:6px;
+}
+
+@keyframes introFade{
+    0%{opacity:1;}
+    70%{opacity:1;}
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* =========================
+   TERMINAL LOADER
+========================= */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.terminal{
+    width:80%;
+    max-width:600px;
+    color:#ff66c4;
+    font-size:16px;
+}
+
+.terminal p::after{
+    content:"|";
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+/* =========================
+   PARALLAX
+========================= */
+
+.parallax{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+}
+
+.layer{
+    position:absolute;
+    width:110%;
+    height:110%;
+    background-size:cover;
+    background-position:center;
+}
+
+.layer1{
+    background: radial-gradient(circle at center,#1a001f,#000);
+    opacity:.9;
+}
+
+.layer2{
+    background: url("SUA_IMAGEM_ROMANTICA_1.jpg");
+    opacity:.15;
+}
+
+.layer3{
+    background: url("SUA_IMAGEM_ROMANTICA_2.jpg");
+    opacity:.1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,102,196,.2);
+}
+
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:28px;
+    color:#ffb3ec;
+    text-shadow:0 0 15px rgba(255,102,196,.6);
+}
+
+.logo span{
+    display:block;
+    font-size:14px;
+    font-family:'JetBrains Mono';
+    color:#ff66c4;
+    margin-top:5px;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav li{
+    cursor:pointer;
+    transition:.3s;
+}
+
+nav li:hover{
+    color:#ff66c4;
+    text-shadow:0 0 10px #ff66c4;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+}
+
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:42px;
+    line-height:1.4;
+    text-shadow:0 0 25px rgba(255,102,196,.4);
+}
+
+/* =========================
+   COUNTERS
+========================= */
+
+.counter-box{
+    text-align:center;
+    padding:60px 10%;
+}
+
+.counter-box h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:30px;
+}
+
+.counter-box div{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+/* =========================
+   SECTIONS ANIMATION
+========================= */
+
+section{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1.2s ease;
+}
+
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+#love-particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+</style>
 </head>
 
 <body>
 
-<audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<div class="music-control" onclick="toggleMusic()">♫</div>
-
-<section class="intro active">
-    <div class="glass">
-        <h1 class="main-title">Aylla & Bruno</h1>
-        <p class="subtitle">A história que começou antes do deploy...</p>
-        <button class="start-btn" onclick="startStory()">Assistir</button>
+<!-- CINEMATIC INTRO -->
+<div id="cinematic-intro">
+    <div class="intro-text">
+        <h1>Aylla & Bruno</h1>
+        <p>Bodas de Milagre — 1 ano</p>
     </div>
-</section>
-
-<section class="chapter">
-    <div class="glass">
-        <h2>Capítulo I</h2>
-        <p>Quando eu considero que tudo começou<br><strong>21/11/2024</strong></p>
-        <div class="counter" id="counter1"></div>
-    </div>
-</section>
-
-<section class="chapter">
-    <div class="glass">
-        <h2>Capítulo II</h2>
-        <p>Quando você oficializou<br><strong>04/04/2025</strong></p>
-        <div class="counter" id="counter2"></div>
-    </div>
-</section>
-
-<section class="chapter">
-    <div class="glass">
-        <h2>Capítulo III</h2>
-        <p>No fim, pouco importa a data.<br>
-        O que importa é que escolhemos continuar.</p>
-    </div>
-</section>
-
-<div class="nav-buttons">
-    <button onclick="prevChapter()">Voltar</button>
-    <button onclick="nextChapter()">Avançar</button>
 </div>
 
-<script src="script.js"></script>
+<!-- LOADER TERMINAL -->
+<div id="loader">
+    <div class="terminal">
+        <p id="terminal-text"></p>
+    </div>
+</div>
+
+<!-- PARALLAX -->
+<div class="parallax">
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+</div>
+
+<!-- PARTICLES -->
+<canvas id="love-particles"></canvas>
+
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+    <source src="SUA_MUSICA_ROMANTICA.mp3" type="audio/mp3">
+</audio>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        Aylla & Bruno
+        <span>Bodas de Milagre — 1 ano</span>
+    </div>
+
+    <nav>
+        <ul>
+            <li>home()</li>
+            <li>historia.js</li>
+            <li>memorias.png</li>
+            <li>motivos.json</li>
+            <li id="forever-btn">forever.exe</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>
+        Um ano atrás, o universo fez deploy da melhor versão da minha vida: nós.
+    </h1>
+</section>
+
+<!-- COUNTERS -->
+<section class="counter-box">
+
+<h2>💖 Nosso Tempo Juntos</h2>
+
+<p>Aylla considera desde 21/11/2024</p>
+<div id="counter-aylla"></div>
+
+<p>Bruno considera desde 04/04/2025</p>
+<div id="counter-bruno"></div>
+
+<small>💬 Começamos a conversar em 18/07/2024</small>
+
+</section>
+
+<script>
+
+/* =========================
+   TERMINAL TYPING
+========================= */
+
+const textLines=[
+"> initializing love protocol...",
+"> connecting two hearts...",
+"> compiling memories...",
+"> no errors found.",
+"> launching forever.exe"
+];
+
+let lineIndex=0;
+let charIndex=0;
+
+function typeTerminal(){
+    const terminal=document.getElementById("terminal-text");
+
+    if(lineIndex<textLines.length){
+
+        if(charIndex<textLines[lineIndex].length){
+            terminal.innerHTML+=textLines[lineIndex].charAt(charIndex);
+            charIndex++;
+
+            setTimeout(typeTerminal,40);
+
+        }else{
+            terminal.innerHTML+="<br>";
+            charIndex=0;
+            lineIndex++;
+
+            setTimeout(typeTerminal,600);
+        }
+    }else{
+        setTimeout(()=>{
+            document.getElementById("loader").style.display="none";
+        },1000);
+    }
+}
+
+window.onload=typeTerminal;
+
+/* =========================
+   MUSIC FADE IN
+========================= */
+
+function smoothMusicStart(){
+    const music=document.getElementById("bg-music");
+
+    music.volume=0;
+
+    music.play().catch(()=>{});
+
+    let vol=0;
+
+    const fade=setInterval(()=>{
+        if(vol<0.4){
+            vol+=0.02;
+            music.volume=vol;
+        }else clearInterval(fade);
+    },150);
+}
+
+window.addEventListener("load",()=>setTimeout(smoothMusicStart,2000));
+
+/* =========================
+   PARALLAX MOUSE
+========================= */
+
+document.addEventListener("mousemove",e=>{
+    const moveX=(e.clientX-window.innerWidth/2)*0.002;
+    const moveY=(e.clientY-window.innerHeight/2)*0.002;
+
+    const layer2=document.querySelector(".layer2");
+    const layer3=document.querySelector(".layer3");
+
+    layer2.style.transform=`translate(${moveX*40}px,${moveY*40}px)`;
+    layer3.style.transform=`translate(${moveX*80}px,${moveY*80}px)`;
+});
+
+/* =========================
+   COUNTERS
+========================= */
+
+function updateCounter(id,startDate){
+
+    const start=new Date(startDate);
+    const now=new Date();
+
+    const diff=now-start;
+
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hours=Math.floor(diff/(1000*60*60)%24);
+    const minutes=Math.floor(diff/(1000*60)%60);
+    const seconds=Math.floor(diff/1000%60);
+
+    document.getElementById(id).innerHTML=
+        `${days} dias, ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(()=>{
+    updateCounter("counter-aylla","2024-11-21T00:00:00");
+    updateCounter("counter-bruno","2025-04-04T00:00:00");
+},1000);
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+        }
+    });
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+    observer.observe(sec);
+});
+
+/* =========================
+   EASTER EGG FOREVER.EXE
+========================= */
+
+document.getElementById("forever-btn").addEventListener("click",()=>{
+
+    document.body.style.transition="2s";
+    document.body.style.filter="brightness(1.4) blur(2px)";
+
+    setTimeout(()=>{
+        alert("💖 Processo iniciado...\nCompilando futuro ao seu lado...\nAmor executado com sucesso.");
+    },800);
+
+    setTimeout(()=>{
+        document.body.style.filter="none";
+    },2000);
+
+});
+
+</script>
+
 </body>
 </html>
