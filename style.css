@@ -5,157 +5,154 @@
 }
 
 body {
-  background: linear-gradient(180deg, #0f0f12, #151522);
-  color: #f4f4f4;
+  background: #000;
+  color: #fff;
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
 }
 
-/* HERO */
-.hero {
+/* INTRO NETFLIX */
+
+.intro {
   height: 100vh;
-  background: linear-gradient(120deg, #1a1a2e, #16213e, #0f3460);
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  animation: introFade 4s forwards;
+}
+
+.netflix-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  color: #e50914;
+  text-shadow: 0 0 20px #e50914, 0 0 60px #e50914;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #e50914; }
+  to { text-shadow: 0 0 40px #ff1e2d; }
+}
+
+@keyframes introFade {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* TOPO */
+
+.topo {
   text-align: center;
+  padding: 100px 20px 60px 20px;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255,192,203,0.1), transparent 70%);
+.topo h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-.hero-content {
+.topo p {
+  opacity: 0.7;
+}
+
+/* TIMELINE */
+
+.timeline {
   position: relative;
-  z-index: 2;
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
 }
 
-.titulo {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  background: #e50914;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
 }
 
-.subtitulo {
-  font-size: 1.3rem;
-  opacity: 0.8;
-  margin-bottom: 40px;
+.evento {
+  position: relative;
+  width: 50%;
+  padding: 40px;
 }
 
-button {
-  padding: 12px 30px;
-  background: linear-gradient(45deg, #a4161a, #ff6b6b);
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,107,107,0.6);
-}
-
-/* CAPÍTULOS */
-
-.capitulo {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 10%;
-}
-
-.capitulo-conteudo {
-  max-width: 600px;
-}
-
-.numero {
-  color: #d4af37;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.capitulo h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin: 10px 0 20px 0;
-}
-
-.capitulo p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.destaque {
-  margin-top: 20px;
-  font-size: 1.3rem;
-  color: #ffb3c1;
-}
-
-/* Alternância */
-
-.esquerda {
-  justify-content: flex-start;
-}
-
-.direita {
-  justify-content: flex-end;
+.evento:nth-child(odd) {
+  left: 0;
   text-align: right;
+}
+
+.evento:nth-child(even) {
+  left: 50%;
+}
+
+.marcador {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #e50914;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px #e50914;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.data {
+  font-size: 0.9rem;
+  color: #e50914;
+  letter-spacing: 2px;
 }
 
 /* CONTADORES */
 
 .contadores {
-  padding: 100px 10%;
+  width: 80%;
+  margin: 100px auto;
   display: grid;
   gap: 40px;
 }
 
-.card-contador {
+.contador-card {
   background: rgba(255,255,255,0.05);
   padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  transition: 0.4s ease;
-}
-
-.card-contador:hover {
-  transform: translateY(-8px);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .tempo {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 .tempo span b {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   display: block;
 }
 
-/* FINAL */
-
-.final {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.final h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-}
-
-/* REVEAL ANIMATION */
+/* REVEAL */
 
 .reveal {
   opacity: 0;
