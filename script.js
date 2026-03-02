@@ -134,3 +134,40 @@ document.getElementById("forever-btn").addEventListener("click",()=>{
     },2000);
 
 });
+/* ===============================
+   MENU NAVIGATION ACTIONS
+=============================== */
+
+function scrollToSection(selector){
+    const el = document.querySelector(selector);
+
+    if(el){
+        el.scrollIntoView({
+            behavior:"smooth"
+        });
+    }
+}
+
+/* HOME */
+
+document.getElementById("menu-home").addEventListener("click",()=>{
+    scrollToSection(".hero");
+});
+
+/* HISTÓRIA */
+
+document.getElementById("menu-historia").addEventListener("click",()=>{
+    alert("💌 História de nós dois — página em construção.");
+});
+
+/* MEMÓRIAS */
+
+document.getElementById("menu-memorias").addEventListener("click",()=>{
+    alert("📸 Galeria de memórias ainda não vinculada.");
+});
+
+/* MOTIVOS */
+
+document.getElementById("menu-motivos").addEventListener("click",()=>{
+    alert("❤️ 10 razões para amar você.");
+});
