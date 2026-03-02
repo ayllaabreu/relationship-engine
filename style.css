@@ -5,112 +5,129 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
-    color: white;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
     overflow: hidden;
+    background: linear-gradient(135deg, #1a0f13, #0d0a0b);
+    color: #f5e6e8;
+}
+
+/* Fundo com brilho sutil */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(180,40,70,0.25), transparent 70%);
+    top: 20%;
+    left: 30%;
+    filter: blur(120px);
+    animation: moveGlow 12s infinite alternate ease-in-out;
+}
+
+@keyframes moveGlow {
+    from { transform: translate(-50px, -30px); }
+    to { transform: translate(50px, 30px); }
 }
 
 section {
     position: absolute;
     width: 100%;
     height: 100vh;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 40px;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 1.2s ease;
 }
 
 .active {
-    display: flex;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
 }
 
-.intro {
-    flex-direction: column;
-    background: linear-gradient(135deg, #000000, #1a1a1a);
+/* GLASS */
+.glass {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 50, 90, 0.15);
 }
 
-.title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+/* TÍTULO */
+.main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    color: #f8d7da;
+    text-shadow: 0 0 25px rgba(255,100,130,0.6);
 }
 
 .subtitle {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 1.2rem;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
-.start-btn {
-    margin-top: 40px;
-    padding: 12px 30px;
-    border: none;
-    background: #e50914;
-    color: white;
-    font-size: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.start-btn:hover {
-    transform: scale(1.1);
-}
-
-.chapter {
-    flex-direction: column;
-    background: linear-gradient(to bottom, #000000, #0a0a0a);
-}
-
-.content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+/* CAPÍTULOS */
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
     margin-bottom: 20px;
+    color: #ffd6dc;
 }
 
-.content p {
+p {
     font-size: 1.1rem;
-    opacity: 0.8;
+    line-height: 1.6;
 }
 
 .counter {
     margin-top: 30px;
     font-size: 1.4rem;
     font-weight: 300;
+    color: #ffb3c1;
+}
+
+/* BOTÕES */
+.start-btn,
+.nav-buttons button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #b83250, #ff6b81);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.start-btn:hover,
+.nav-buttons button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255,100,130,0.7);
 }
 
 .nav-buttons {
     position: fixed;
-    bottom: 30px;
+    bottom: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;
-}
-
-.nav-buttons button {
-    padding: 10px 25px;
-    border-radius: 30px;
-    border: none;
-    background: #ffffff10;
-    color: white;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-}
-
-.nav-buttons button:hover {
-    background: #ffffff30;
+    gap: 25px;
 }
 
 .music-control {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 25px;
     font-size: 1.5rem;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.7;
 }
