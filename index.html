@@ -5,60 +5,60 @@
   <title>Nossa História</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="titulo">A História que Começou Antes do Deploy</h1>
-      <p class="subtitulo">
-        Tudo começou em 18/07/2024.<br>
-        O commit mais importante da minha vida.
-      </p>
-      <button id="btnEntrar">Entrar na história</button>
-    </div>
+  <!-- INTRO ESTILO NETFLIX -->
+  <section class="intro" id="intro">
+    <div class="netflix-logo">A & B</div>
   </section>
 
+  <!-- CONTEÚDO PRINCIPAL -->
   <main id="conteudo" class="hidden">
 
-    <!-- CAPÍTULO 1 -->
-    <section class="capitulo reveal esquerda">
-      <div class="capitulo-conteudo">
-        <span class="numero">Capítulo 1</span>
-        <h2>O Primeiro Encontro</h2>
-        <p>
-          Em 21/11/2024, no Shopping Bela Vista,
-          algo mudou silenciosamente.
-        </p>
-        <p class="destaque">
-          Para mim, ali começou oficialmente nossa história.
-        </p>
-      </div>
-    </section>
+    <header class="topo">
+      <h1>A História Que Começou Antes do Deploy</h1>
+      <p>Algumas versões divergem. O sentimento não.</p>
+    </header>
 
-    <!-- CAPÍTULO 2 -->
-    <section class="capitulo reveal direita">
-      <div class="capitulo-conteudo">
-        <span class="numero">Capítulo 2</span>
-        <h2>O Chamado Oficial</h2>
-        <p>
-          Para ele, tudo começou apenas quando o chamado foi aberto
-          em 04/04/2025.
-        </p>
-        <p class="destaque">
-          Versão técnica. Documentada. Auditável.
-        </p>
+    <!-- LINHA DO TEMPO -->
+    <section class="timeline">
+
+      <div class="evento reveal">
+        <div class="marcador"></div>
+        <div class="card">
+          <span class="data">18/07/2024</span>
+          <h2>O Primeiro Commit</h2>
+          <p>Começamos a conversar. Sem saber, iniciamos algo maior.</p>
+        </div>
       </div>
+
+      <div class="evento reveal">
+        <div class="marcador"></div>
+        <div class="card">
+          <span class="data">21/11/2024</span>
+          <h2>Minha Versão Oficial</h2>
+          <p>No Shopping Bela Vista, para mim, começou o namoro.</p>
+        </div>
+      </div>
+
+      <div class="evento reveal">
+        <div class="marcador"></div>
+        <div class="card">
+          <span class="data">04/04/2025</span>
+          <h2>Versão Técnica Dele</h2>
+          <p>Quando o chamado foi oficialmente aberto.</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- CONTADORES -->
     <section class="contadores reveal">
-      <div class="card-contador">
-        <h3>📌 Minha versão (21/11/2024)</h3>
+      <div class="contador-card">
+        <h3>📌 Minha contagem</h3>
         <div class="tempo">
           <span><b id="diasEla">0</b> dias</span>
           <span><b id="horasEla">0</b> h</span>
@@ -67,8 +67,8 @@
         </div>
       </div>
 
-      <div class="card-contador">
-        <h3>🧾 Versão dele (04/04/2025)</h3>
+      <div class="contador-card">
+        <h3>🧾 Contagem dele</h3>
         <div class="tempo">
           <span><b id="diasEle">0</b> dias</span>
           <span><b id="horasEle">0</b> h</span>
@@ -76,11 +76,6 @@
           <span><b id="segEle">0</b> s</span>
         </div>
       </div>
-    </section>
-
-    <section class="final reveal">
-      <p>Independente da versão…</p>
-      <h2>O que importa é que estamos juntos.</h2>
     </section>
 
   </main>
