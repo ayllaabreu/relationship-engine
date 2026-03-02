@@ -1,85 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Nossa História</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa História</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- INTRO ESTILO NETFLIX -->
-  <section class="intro" id="intro">
-    <div class="netflix-logo">A & B</div>
-  </section>
+<!-- MÚSICA -->
+<audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main id="conteudo" class="hidden">
+<div class="music-control" onclick="toggleMusic()">
+    ♫
+</div>
 
-    <header class="topo">
-      <h1>A História Que Começou Antes do Deploy</h1>
-      <p>Algumas versões divergem. O sentimento não.</p>
-    </header>
+<!-- INTRO -->
+<section class="intro active">
+    <h1 class="title">Nossa História</h1>
+    <p class="subtitle">A história que começou antes do deploy...</p>
+    <button class="start-btn" onclick="startStory()">Assistir</button>
+</section>
 
-    <!-- LINHA DO TEMPO -->
-    <section class="timeline">
+<!-- CAPÍTULOS -->
+<section class="chapter">
+    <div class="content">
+        <h2>Capítulo 1</h2>
+        <p>Quando eu considero que tudo começou: 21/11/2024</p>
+        <div class="counter" id="counter1"></div>
+    </div>
+</section>
 
-      <div class="evento reveal">
-        <div class="marcador"></div>
-        <div class="card">
-          <span class="data">18/07/2024</span>
-          <h2>O Primeiro Commit</h2>
-          <p>Começamos a conversar. Sem saber, iniciamos algo maior.</p>
-        </div>
-      </div>
+<section class="chapter">
+    <div class="content">
+        <h2>Capítulo 2</h2>
+        <p>Quando você decidiu oficialmente: 04/04/2025</p>
+        <div class="counter" id="counter2"></div>
+    </div>
+</section>
 
-      <div class="evento reveal">
-        <div class="marcador"></div>
-        <div class="card">
-          <span class="data">21/11/2024</span>
-          <h2>Minha Versão Oficial</h2>
-          <p>No Shopping Bela Vista, para mim, começou o namoro.</p>
-        </div>
-      </div>
+<section class="chapter">
+    <div class="content">
+        <h2>Capítulo 3</h2>
+        <p>No final, pouco importa a data.<br>
+        O que importa é que a gente escolhe continuar.</p>
+    </div>
+</section>
 
-      <div class="evento reveal">
-        <div class="marcador"></div>
-        <div class="card">
-          <span class="data">04/04/2025</span>
-          <h2>Versão Técnica Dele</h2>
-          <p>Quando o chamado foi oficialmente aberto.</p>
-        </div>
-      </div>
+<!-- CONTROLES -->
+<div class="nav-buttons">
+    <button onclick="prevChapter()">Voltar</button>
+    <button onclick="nextChapter()">Avançar</button>
+</div>
 
-    </section>
-
-    <!-- CONTADORES -->
-    <section class="contadores reveal">
-      <div class="contador-card">
-        <h3>📌 Minha contagem</h3>
-        <div class="tempo">
-          <span><b id="diasEla">0</b> dias</span>
-          <span><b id="horasEla">0</b> h</span>
-          <span><b id="minEla">0</b> min</span>
-          <span><b id="segEla">0</b> s</span>
-        </div>
-      </div>
-
-      <div class="contador-card">
-        <h3>🧾 Contagem dele</h3>
-        <div class="tempo">
-          <span><b id="diasEle">0</b> dias</span>
-          <span><b id="horasEle">0</b> h</span>
-          <span><b id="minEle">0</b> min</span>
-          <span><b id="segEle">0</b> s</span>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
