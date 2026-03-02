@@ -1,62 +1,136 @@
-const sections = document.querySelectorAll("section");
-let current = 0;
+/* TERMINAL TYPING */
 
-function startStory() {
-    document.getElementById("bgMusic").play();
-    showSection(1);
-}
+const textLines=[
+"> initializing love protocol...",
+"> connecting two hearts...",
+"> compiling memories...",
+"> no errors found.",
+"> launching forever.exe"
+];
 
-function showSection(index) {
-    sections.forEach(sec => sec.classList.remove("active"));
-    sections[index].classList.add("active");
-    current = index;
-}
+let lineIndex=0;
+let charIndex=0;
 
-function nextChapter() {
-    if (current < sections.length - 1) {
-        showSection(current + 1);
+function typeTerminal(){
+
+    const terminal=document.getElementById("terminal-text");
+
+    if(lineIndex<textLines.length){
+
+        if(charIndex<textLines[lineIndex].length){
+            terminal.innerHTML+=textLines[lineIndex].charAt(charIndex);
+            charIndex++;
+
+            setTimeout(typeTerminal,40);
+
+        }else{
+            terminal.innerHTML+="<br>";
+            charIndex=0;
+            lineIndex++;
+
+            setTimeout(typeTerminal,600);
+        }
+    }else{
+        setTimeout(()=>{
+            document.getElementById("loader").style.display="none";
+        },1000);
     }
 }
 
-function prevChapter() {
-    if (current > 0) {
-        showSection(current - 1);
+window.onload=typeTerminal;
+
+/* MUSIC FADE IN */
+
+function smoothMusicStart(){
+
+    const music=document.getElementById("bg-music");
+
+    music.volume=0;
+
+    music.play().catch(()=>{});
+
+    let vol=0;
+
+    const fade=setInterval(()=>{
+
+        if(vol<0.4){
+            vol+=0.02;
+            music.volume=vol;
+        }else clearInterval(fade);
+
+    },150);
+}
+
+window.addEventListener("load",()=>setTimeout(smoothMusicStart,2000));
+
+/* PARALLAX MOUSE */
+
+document.addEventListener("mousemove",e=>{
+
+    const moveX=(e.clientX-window.innerWidth/2)*0.002;
+    const moveY=(e.clientY-window.innerHeight/2)*0.002;
+
+    const layer2=document.querySelector(".layer2");
+    const layer3=document.querySelector(".layer3");
+
+    if(layer2 && layer3){
+        layer2.style.transform=`translate(${moveX*40}px,${moveY*40}px)`;
+        layer3.style.transform=`translate(${moveX*80}px,${moveY*80}px)`;
     }
-}
-
-function toggleMusic() {
-    const music = document.getElementById("bgMusic");
-    music.paused ? music.play() : music.pause();
-}
-
-/* CONTADORES */
-function updateCounter(id, date) {
-    const element = document.getElementById(id);
-    setInterval(() => {
-        const now = new Date();
-        const diff = now - new Date(date);
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        element.innerHTML = `${days} dias • ${hours}h • ${minutes}m • ${seconds}s`;
-    }, 1000);
-}
-
-updateCounter("counter1", "2024-11-21");
-updateCounter("counter2", "2025-04-04");
-
-/* SWIPE MOBILE */
-let startX = 0;
-
-document.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
 });
 
-document.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 60) nextChapter();
-    if (endX - startX > 60) prevChapter();
+/* COUNTERS */
+
+function updateCounter(id,startDate){
+
+    const start=new Date(startDate);
+    const now=new Date();
+
+    const diff=now-start;
+
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hours=Math.floor(diff/(1000*60*60)%24);
+    const minutes=Math.floor(diff/(1000*60)%60);
+    const seconds=Math.floor(diff/1000%60);
+
+    document.getElementById(id).innerHTML=
+        `${days} dias, ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(()=>{
+
+    updateCounter("counter-aylla","2024-11-21T00:00:00");
+    updateCounter("counter-bruno","2025-04-04T00:00:00");
+
+},1000);
+
+/* SCROLL REVEAL */
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+        }
+    });
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+    observer.observe(sec);
+});
+
+/* FOREVER.EXE EASTER EGG */
+
+document.getElementById("forever-btn").addEventListener("click",()=>{
+
+    document.body.style.transition="2s";
+    document.body.style.filter="brightness(1.4) blur(2px)";
+
+    setTimeout(()=>{
+        alert("💖 Processo iniciado...\nCompilando futuro ao seu lado...\nAmor executado com sucesso.");
+    },800);
+
+    setTimeout(()=>{
+        document.body.style.filter="none";
+    },2000);
+
 });
