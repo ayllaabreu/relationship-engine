@@ -65,7 +65,7 @@ section{
 }
 
 .parallax{
-    background:url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2070') center/cover fixed;
+    background: radial-gradient(circle at 50% 40%, #1a0f2e, #0f0f1a 70%);
 }
 
 h1{
