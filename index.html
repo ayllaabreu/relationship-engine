@@ -14,7 +14,7 @@
 
 <body>
 
-<!-- CINEMATIC INTRO -->
+<!-- INTRO CINEMATOGRÁFICA -->
 <div id="cinematic-intro">
     <div class="intro-text">
         <h1>Aylla & Bruno</h1>
@@ -22,12 +22,10 @@
     </div>
 </div>
 
-<!-- LOADER TERMINAL -->
-<div id="loader">
-    <div class="terminal">
-        <p id="terminal-text"></p>
-    </div>
-</div>
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+    <source src="music/romance.mp3" type="audio/mp3">
+</audio>
 
 <!-- PARALLAX -->
 <div class="parallax">
@@ -36,46 +34,44 @@
     <div class="layer layer3"></div>
 </div>
 
-<!-- PARTICLES -->
 <canvas id="love-particles"></canvas>
 
-<!-- MUSIC -->
-<audio id="bg-music" loop>
-    <source src="SUA_MUSICA_ROMANTICA.mp3" type="audio/mp3">
-</audio>
-
 <!-- HEADER -->
-<header>
-    <div class="logo">
-        Aylla & Bruno
-        <span>Bodas de Milagre — 1 ano</span>
-    </div>
+<header class="header-glass">
 
-    <nav class="menu-romantico">
-    <ul>
-        <li data-target="hero">home()</li>
-        <li data-target="historia">historia.js</li>
-        <li data-target="galeria">memorias.png</li>
-        <li data-target="motivos">motivos.json</li>
-        <li id="forever-btn">forever.exe</li>
-    </ul>
+<div class="logo">
+Aylla & Bruno
+<span>Bodas de Milagre — 1 ano</span>
+</div>
+
+<nav class="menu-romantico">
+<ul>
+<li data-target="hero">home()</li>
+<li data-target="historia">historia.js</li>
+<li data-target="galeria">memorias.png</li>
+<li data-target="motivos">motivos.json</li>
+<li id="forever-btn">forever.exe</li>
+</ul>
 </nav>
+
 </header>
 
 <!-- HERO -->
-<section id="hero" class="hero">
-    <h1>No dia 21/11/2024, o universo fez deploy de uma das melhores versões da minha vida: nós.</h1>
+<section id="hero" class="hero section-fade">
+<h1>
+Um ano atrás, o universo fez deploy da melhor versão da minha vida: nós.
+</h1>
 </section>
 
-<!-- COUNTERS -->
-<section class="counter-box">
+<!-- HISTÓRIA -->
+<section id="historia" class="counter-box section-fade">
 
 <h2>💖 Nosso Tempo Juntos</h2>
 
-<p>Versão de Aylla 21/11/2024</p>
+<p>Aylla considera desde 21/11/2024</p>
 <div id="counter-aylla"></div>
 
-<p>Versão de Bruno 04/04/2025</p>
+<p>Bruno considera desde 04/04/2025</p>
 <div id="counter-bruno"></div>
 
 <small>💬 Começamos a conversar em 18/07/2024</small>
