@@ -5,14 +5,12 @@
   <title>Nossa História</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- INTRO CINEMATOGRÁFICA -->
+  <!-- HERO -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -25,29 +23,43 @@
     </div>
   </section>
 
-  <!-- CONTEÚDO PRINCIPAL -->
   <main id="conteudo" class="hidden">
 
-    <section class="historia">
-      <h2>Capítulo 1 — O Primeiro Encontro</h2>
-      <p>
-        Em 21/11/2024, no Shopping Bela Vista, algo mudou.
-        Para mim, ali começou oficialmente nossa história.
-      </p>
-
-      <h2>Capítulo 2 — O Chamado Oficial</h2>
-      <p>
-        Para ele, tudo começou apenas quando o chamado foi aberto em 04/04/2025.
-        Versão técnica. Documentada. Auditável.
-      </p>
+    <!-- CAPÍTULO 1 -->
+    <section class="capitulo reveal esquerda">
+      <div class="capitulo-conteudo">
+        <span class="numero">Capítulo 1</span>
+        <h2>O Primeiro Encontro</h2>
+        <p>
+          Em 21/11/2024, no Shopping Bela Vista,
+          algo mudou silenciosamente.
+        </p>
+        <p class="destaque">
+          Para mim, ali começou oficialmente nossa história.
+        </p>
+      </div>
     </section>
 
-    <!-- CONTADORES DUPLOS -->
-    <section class="contadores">
+    <!-- CAPÍTULO 2 -->
+    <section class="capitulo reveal direita">
+      <div class="capitulo-conteudo">
+        <span class="numero">Capítulo 2</span>
+        <h2>O Chamado Oficial</h2>
+        <p>
+          Para ele, tudo começou apenas quando o chamado foi aberto
+          em 04/04/2025.
+        </p>
+        <p class="destaque">
+          Versão técnica. Documentada. Auditável.
+        </p>
+      </div>
+    </section>
 
+    <!-- CONTADORES -->
+    <section class="contadores reveal">
       <div class="card-contador">
         <h3>📌 Minha versão (21/11/2024)</h3>
-        <div class="tempo" id="contadorEla">
+        <div class="tempo">
           <span><b id="diasEla">0</b> dias</span>
           <span><b id="horasEla">0</b> h</span>
           <span><b id="minEla">0</b> min</span>
@@ -57,20 +69,17 @@
 
       <div class="card-contador">
         <h3>🧾 Versão dele (04/04/2025)</h3>
-        <div class="tempo" id="contadorEle">
+        <div class="tempo">
           <span><b id="diasEle">0</b> dias</span>
           <span><b id="horasEle">0</b> h</span>
           <span><b id="minEle">0</b> min</span>
           <span><b id="segEle">0</b> s</span>
         </div>
       </div>
-
     </section>
 
-    <section class="final">
-      <p>
-        Independente da versão…
-      </p>
+    <section class="final reveal">
+      <p>Independente da versão…</p>
       <h2>O que importa é que estamos juntos.</h2>
     </section>
 
