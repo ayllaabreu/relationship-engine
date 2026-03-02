@@ -1,50 +1,66 @@
-const conteudo = document.getElementById("conteudo");
+let chapters = document.querySelectorAll("section");
+let current = 0;
 
-/* MOSTRAR CONTEÚDO APÓS INTRO */
-setTimeout(() => {
-  conteudo.classList.remove("hidden");
-}, 4000);
+function startStory() {
+    document.getElementById("bgMusic").play();
+    showChapter(1);
+}
+
+function showChapter(index) {
+    chapters.forEach(sec => sec.classList.remove("active"));
+    chapters[index].classList.add("active");
+    current = index;
+}
+
+function nextChapter() {
+    if (current < chapters.length - 1) {
+        showChapter(current + 1);
+    }
+}
+
+function prevChapter() {
+    if (current > 0) {
+        showChapter(current - 1);
+    }
+}
+
+function toggleMusic() {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
 
 /* CONTADORES */
+function updateCounter(id, startDate) {
+    const element = document.getElementById(id);
+    setInterval(() => {
+        const now = new Date();
+        const diff = now - new Date(startDate);
 
-function atualizarContador(dataInicial, prefixo) {
-  const agora = new Date();
-  const diferenca = agora - dataInicial;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
 
-  const segundos = Math.floor(diferenca / 1000);
-  const dias = Math.floor(segundos / (3600 * 24));
-  const horas = Math.floor((segundos % (3600 * 24)) / 3600);
-  const minutos = Math.floor((segundos % 3600) / 60);
-  const seg = segundos % 60;
-
-  document.getElementById("dias" + prefixo).textContent = dias;
-  document.getElementById("horas" + prefixo).textContent = horas;
-  document.getElementById("min" + prefixo).textContent = minutos;
-  document.getElementById("seg" + prefixo).textContent = seg;
+        element.innerHTML = `${days} dias ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
 }
 
-const dataEla = new Date("2024-11-21T00:00:00");
-const dataEle = new Date("2025-04-04T00:00:00");
+updateCounter("counter1", "2024-11-21");
+updateCounter("counter2", "2025-04-04");
 
-setInterval(() => {
-  atualizarContador(dataEla, "Ela");
-  atualizarContador(dataEle, "Ele");
-}, 1000);
+/* SWIPE MOBILE */
+let startX = 0;
 
-/* REVEAL ANIMATION */
+document.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
 
-function revelar() {
-  const reveals = document.querySelectorAll(".reveal");
-
-  reveals.forEach((elemento) => {
-    const alturaTela = window.innerHeight;
-    const topoElemento = elemento.getBoundingClientRect().top;
-
-    if (topoElemento < alturaTela - 100) {
-      elemento.classList.add("ativo");
-    }
-  });
-}
-
-window.addEventListener("scroll", revelar);
-window.addEventListener("load", revelar);
+document.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextChapter();
+    if (endX - startX > 50) prevChapter();
+});
