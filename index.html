@@ -1,73 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Relationship Engine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aylla & Bruno</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="background"></div>
 
-<div class="terminal fade-in">
-  <div id="typing"></div>
+<div class="container" id="card">
+
+<h1>Aylla & Bruno</h1>
+<p class="subtitle">Build: Forever 1.0 💍</p>
+
+<div class="timeline">
+<p>💬 Primeiro commit: 18/07/2024</p>
+<p>✨ Primeiro encontro: 21/11/2024 — Shopping Bela Vista, Salvador</p>
+<p>📩 Abertura oficial do chamado: 04/04/2025</p>
 </div>
 
-<section class="counter fade-in">
-  <h2>System Uptime</h2>
-  <div id="timeTogether"></div>
-</section>
-
-<section class="timeline fade-in">
-  <h2>Changelog</h2>
-  <ul>
-    <li>v0.1 – Primeira conversa</li>
-    <li>v0.5 – Primeiro encontro</li>
-    <li>v1.0 – Relationship deployed (04/04/2025)</li>
-    <li>v1.5 – Bugs resolvidos juntos</li>
-    <li>v2.0 – 1 year stable release ❤️</li>
-  </ul>
-</section>
-
-<section class="gallery fade-in">
-  <h2>Memory Archive</h2>
-  <div class="grid">
-    <img src="images/foto1.jpg" onclick="openLightbox(this.src)">
-    <img src="images/foto2.jpg" onclick="openLightbox(this.src)">
-    <img src="images/foto3.jpg" onclick="openLightbox(this.src)">
-    <img src="images/foto4.jpg" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
+<div class="contador-area">
+<div id="contadorAylla"></div>
+<div id="contadorOficial"></div>
 </div>
 
-<section class="core fade-in">
-  <h2>Core System</h2>
-  <pre>
-const relationshipCore = {
-  partner1: "Aylla",
-  partner2: "Bruno",
-  startDate: "04/04/2025",
-  status: "stable",
-  loveLevel: Infinity,
-  resilience: true
-}
-  </pre>
-</section>
+<button onclick="alternarVersao()">Alternar versão do sistema</button>
 
-<footer class="fade-in">
-  <p>Stable Release Since 04.04.2025</p>
-  <button id="musicToggle">Play Music 🎵</button>
-</footer>
+<p id="mensagemHumor">
+Conflito de versionamento detectado. Ambas as versões são válidas. 💞
+</p>
 
-<audio id="bgMusic" loop>
-  <source src="audio/music.mp3" type="audio/mp3">
+<div class="galeria">
+<img src="fotos/foto1.jpg">
+<img src="fotos/foto2.jpg">
+<img src="fotos/foto3.jpg">
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script src="script.js"></script>
+
 </body>
 </html>
