@@ -1,10 +1,9 @@
-const btn = document.getElementById("btnEntrar");
 const conteudo = document.getElementById("conteudo");
 
-btn.addEventListener("click", () => {
-  document.querySelector(".hero").style.display = "none";
+/* MOSTRAR CONTEÚDO APÓS INTRO */
+setTimeout(() => {
   conteudo.classList.remove("hidden");
-});
+}, 4000);
 
 /* CONTADORES */
 
@@ -32,7 +31,7 @@ setInterval(() => {
   atualizarContador(dataEle, "Ele");
 }, 1000);
 
-/* ANIMAÇÃO AO ROLAR */
+/* REVEAL ANIMATION */
 
 function revelar() {
   const reveals = document.querySelectorAll(".reveal");
