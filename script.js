@@ -1,32 +1,27 @@
-// ===== CONTADORES =====
+// ===== CONTADOR PRINCIPAL (21/11/2024 - O MILAGRE) =====
 
-const dataConhecemos = new Date(2024, 10, 21); // 21/11/2024
-const dataOficial = new Date(2025, 3, 4);      // 04/04/2025
+const dataMilagre = new Date(2024, 10, 21); 
+// Lembre: mês começa do zero. 10 = novembro.
 
-function calcularTempo(data) {
+function atualizarContadorPrincipal() {
   const agora = new Date();
-  const diff = agora - data;
+  const diff = agora - dataMilagre;
 
   const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
   const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutos = Math.floor((diff / (1000 * 60)) % 60);
   const segundos = Math.floor((diff / 1000) % 60);
 
-  return `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-}
+  const contador = document.getElementById("contadorPrincipal");
 
-function atualizarContadores() {
-  const contador1 = document.getElementById("contadorConhecemos");
-  const contador2 = document.getElementById("contadorOficial");
-
-  if (contador1 && contador2) {
-    contador1.innerHTML = calcularTempo(dataConhecemos) + " juntos 💫";
-    contador2.innerHTML = calcularTempo(dataOficial) + " oficialmente 🛎";
+  if (contador) {
+    contador.innerHTML =
+      `${dias} dias, ${horas}h ${minutos}m ${segundos}s juntos 💖`;
   }
 }
 
-setInterval(atualizarContadores, 1000);
-atualizarContadores();
+setInterval(atualizarContadorPrincipal, 1000);
+atualizarContadorPrincipal();
 
 
 // Fade in ao rolar
