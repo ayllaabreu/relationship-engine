@@ -1,4 +1,4 @@
-// PROGRESSO GLOBAL
+// PROGRESS BAR
 window.addEventListener("scroll",()=>{
     const scrollTop = window.scrollY;
     const height = document.body.scrollHeight - window.innerHeight;
@@ -6,52 +6,31 @@ window.addEventListener("scroll",()=>{
         (scrollTop/height)*100 + "%";
 });
 
-// CAPÍTULOS STREAMING
-let current = 0;
-const chapters = document.querySelectorAll(".chapter");
-const transition = document.querySelector(".page-transition");
-const chapterBar = document.querySelector(".chapter-bar");
-
-function showChapter(index){
-    transition.classList.add("active");
-
-    setTimeout(()=>{
-        chapters[current].classList.remove("active");
-        current = index;
-        chapters[current].classList.add("active");
-        chapterBar.style.width = ((current+1)/chapters.length)*100 + "%";
-        transition.classList.remove("active");
-    },600);
-}
-
-document.getElementById("next").onclick = ()=>{
-    if(current < chapters.length-1){
-        showChapter(current+1);
-    }
-};
-
-document.getElementById("prev").onclick = ()=>{
-    if(current > 0){
-        showChapter(current-1);
-    }
-};
-
-// LIGHTBOX CINEMA
-const lightbox = document.querySelector(".lightbox");
-const lightboxImg = document.querySelector(".lightbox-img");
-
-document.querySelectorAll(".lightbox-trigger").forEach(img=>{
-    img.addEventListener("click",()=>{
-        lightbox.classList.add("active");
-        lightboxImg.src = img.src;
-    });
+// CURSOR GLOW
+const cursor = document.querySelector(".cursor-glow");
+document.addEventListener("mousemove", e=>{
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
 });
 
-document.querySelector(".close-lightbox").onclick = ()=>{
-    lightbox.classList.remove("active");
-};
+// CONTADOR (defina a data de início aqui)
+const startDate = new Date("2023-01-01");
 
-// FOREVER DARK IMMERSIVE
+function updateCounter(){
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+}
+
+setInterval(updateCounter,1000);
+updateCounter();
+
+// FOREVER MODE
 document.getElementById("foreverBtn").addEventListener("click",()=>{
     document.body.classList.toggle("dark-romantic");
 });
