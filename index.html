@@ -1,101 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aylla & Bruno</title>
+
+<title>Bodas de Milagre — Aylla & Bruno</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="progress-bar"></div>
-<div class="cursor-glow"></div>
+<!-- LOADING TERMINAL -->
+<div id="loader">
+    <div class="terminal">
+        <p id="terminal-text"></p>
+    </div>
+</div>
 
-<!-- MENU -->
-<header class="navbar">
-    <div class="logo">Aylla & Bruno</div>
+<!-- SITE -->
+<header>
+    <div class="logo">
+        Aylla & Bruno
+        <span>Bodas de Milagre — 1 ano</span>
+    </div>
+
     <nav>
-        <a href="#home">Início</a>
-        <a href="#historia">História</a>
-        <a href="#memorias">Memórias</a>
-        <a href="#motivos">Motivos</a>
+        <ul>
+            <li>home()</li>
+            <li>historia.js</li>
+            <li>memorias.png</li>
+            <li>motivos.json</li>
+            <li>forever.exe</li>
+        </ul>
     </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-    <h1>Aylla & Bruno</h1>
-    <p class="subtitle">Bodas de Milagre</p>
-
-    <div class="counters">
-        <div class="counter-box">
-            <span id="days">0</span>
-            <p>Dias juntos</p>
-        </div>
-        <div class="counter-box">
-            <span id="hours">0</span>
-            <p>Horas compartilhadas</p>
-        </div>
-    </div>
+<section class="hero">
+    <h1>Um ano atrás, o universo fez deploy da melhor versão da minha vida: nós.</h1>
 </section>
-
-<!-- HISTÓRIA -->
-<section class="section reveal" id="historia">
-    <h2>História</h2>
-    <p>
-        Tudo começou de forma inesperada.
-        Entre conversas, risadas e coincidências,
-        surgiu algo que nenhum dos dois sabia explicar,
-        mas que ambos sentiam.
-        Não foi pressa. Foi conexão.
-    </p>
-</section>
-
-<!-- MEMÓRIAS -->
-<section class="section reveal" id="memorias">
-    <h2>Memórias</h2>
-
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/foto1.webp" loading="lazy">
-        </div>
-        <div class="gallery-item">
-            <img src="images/foto2.webp" loading="lazy">
-        </div>
-        <div class="gallery-item">
-            <img src="images/foto3.webp" loading="lazy">
-        </div>
-        <div class="gallery-item">
-            <img src="images/foto4.webp" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<!-- MOTIVOS -->
-<section class="section reveal" id="motivos">
-    <h2>Motivos</h2>
-
-    <ol class="motivos-lista">
-        <li>Porque você me traz paz.</li>
-        <li>Porque escolhemos um ao outro todos os dias.</li>
-        <li>Porque crescemos juntos.</li>
-        <li>Porque o amor é leve quando é verdadeiro.</li>
-        <li>Porque nossa conexão não se explica, se sente.</li>
-    </ol>
-</section>
-
-<!-- FOREVER FINAL -->
-<section class="forever-section">
-    <button id="foreverBtn" class="forever-btn">forever.exe</button>
-</section>
-
-<footer class="footer">
-    <p>© Aylla & Bruno</p>
-</footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
