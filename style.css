@@ -208,3 +208,31 @@ footer {
 #closeTerminal {
   margin-top: 20px;
 }
+
+.contador-principal {
+  margin-top: 30px;
+}
+
+.subtexto-contador {
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.timeline-box {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+}
+
+.timeline-item.destaque {
+  border: 1px solid rgba(255, 78, 205, 0.6);
+  box-shadow: 0 0 20px rgba(255, 78, 205, 0.2);
+}
