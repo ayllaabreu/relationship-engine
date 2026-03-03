@@ -6,52 +6,95 @@
 <title>Aylla & Bruno</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="progress-bar"></div>
-<div class="chapter-bar"></div>
-<div class="page-transition"></div>
+<div class="cursor-glow"></div>
 
-<header class="hero">
-    <h1>Aylla & Bruno</h1>
-    <button id="foreverBtn" class="forever-btn">forever.exe</button>
+<!-- MENU -->
+<header class="navbar">
+    <div class="logo">Aylla & Bruno</div>
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#historia">História</a>
+        <a href="#memorias">Memórias</a>
+        <a href="#motivos">Motivos</a>
+    </nav>
 </header>
 
-<section class="chapter active" id="cap1">
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>Aylla & Bruno</h1>
+    <p class="subtitle">Bodas de Milagre</p>
+
+    <div class="counters">
+        <div class="counter-box">
+            <span id="days">0</span>
+            <p>Dias juntos</p>
+        </div>
+        <div class="counter-box">
+            <span id="hours">0</span>
+            <p>Horas compartilhadas</p>
+        </div>
+    </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="section reveal" id="historia">
     <h2>História</h2>
-    <div class="gallery">
-        <img src="images/foto1.webp" class="lightbox-trigger">
-        <img src="images/foto2.webp" class="lightbox-trigger">
-    </div>
+    <p>
+        Tudo começou de forma inesperada.
+        Entre conversas, risadas e coincidências,
+        surgiu algo que nenhum dos dois sabia explicar,
+        mas que ambos sentiam.
+        Não foi pressa. Foi conexão.
+    </p>
 </section>
 
-<section class="chapter" id="cap2">
+<!-- MEMÓRIAS -->
+<section class="section reveal" id="memorias">
     <h2>Memórias</h2>
+
     <div class="gallery">
-        <img src="images/foto3.webp" class="lightbox-trigger">
-        <img src="images/foto4.webp" class="lightbox-trigger">
+        <div class="gallery-item">
+            <img src="images/foto1.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto2.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto3.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto4.webp" loading="lazy">
+        </div>
     </div>
 </section>
 
-<section class="chapter" id="cap3">
+<!-- MOTIVOS -->
+<section class="section reveal" id="motivos">
     <h2>Motivos</h2>
-    <p>Porque o amor verdadeiro não é acaso. É destino.</p>
+
+    <ol class="motivos-lista">
+        <li>Porque você me traz paz.</li>
+        <li>Porque escolhemos um ao outro todos os dias.</li>
+        <li>Porque crescemos juntos.</li>
+        <li>Porque o amor é leve quando é verdadeiro.</li>
+        <li>Porque nossa conexão não se explica, se sente.</li>
+    </ol>
 </section>
 
-<div class="chapter-controls">
-    <button id="prev">←</button>
-    <button id="next">→</button>
-</div>
+<!-- FOREVER FINAL -->
+<section class="forever-section">
+    <button id="foreverBtn" class="forever-btn">forever.exe</button>
+</section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox">
-    <span class="close-lightbox">✕</span>
-    <img class="lightbox-img">
-</div>
+<footer class="footer">
+    <p>© Aylla & Bruno</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
