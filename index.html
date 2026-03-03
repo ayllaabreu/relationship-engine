@@ -1,127 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bodas de Milagre - 1 Ano</title>
+<title>Aylla & Bruno</title>
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-  <nav class="navbar">
-    <div class="logo">✨ Bodas de Milagre</div>
-    <ul>
-      <li><a href="#home">Início</a></li>
-      <li><a href="#historia">Nossa Lore</a></li>
-      <li><a href="#galeria">Deploy das Memórias</a></li>
-      <li><a href="#motivos">10 Motivos v1.0</a></li>
-    </ul>
-  </nav>
+<!-- INTRO SCREEN -->
+<div id="intro">
+    <div class="intro-content">
+        <h1 class="intro-title">Uma história que começou com um milagre</h1>
+        <button id="enterSite" class="enter-btn">Entrar</button>
+    </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div id="mainContent">
+
+<div class="progress-bar"></div>
+<div class="cursor-glow"></div>
+
+<header class="navbar">
+    <div class="logo">Aylla & Bruno</div>
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#historia">História</a>
+        <a href="#memorias">Memórias</a>
+        <a href="#motivos">Motivos</a>
+    </nav>
 </header>
 
-<section id="home" class="hero">
-  <div class="contador-principal">
-  <h3>Desde que o destino nos apresentou 💫</h3>
-  <div id="contadorPrincipal"></div>
-  <p class="subtexto-contador">
-    Porque foi nesse dia que o milagre começou.
-  </p>
-</div>
-</section>
+<section class="hero" id="home">
+    <h1>Aylla & Bruno</h1>
+    <p class="subtitle">Bodas de Milagre</p>
 
-<section class="section fade">
-  <h2>As versões oficiais da nossa história</h2>
-
-  <div class="timeline-box">
-    <div class="timeline-item">
-      <h3>📩 18/07/2024 — O Prólogo</h3>
-      <p>
-        Foi quando começamos a conversar.
-        Eu cheia de insegurança.
-        Vários encontros desmarcados por nervosismo.
-        E você, sempre calmo, sempre paciente,
-        sempre dizendo:
-        <strong>“Tudo tem seu tempo.”</strong>
-      </p>
+    <div class="counters">
+        <div class="counter-box">
+            <span id="days">0</span>
+            <p>Dias juntos</p>
+        </div>
+        <div class="counter-box">
+            <span id="hours">0</span>
+            <p>Horas compartilhadas</p>
+        </div>
     </div>
+</section>
 
-    <div class="timeline-item destaque">
-      <h3>💫 21/11/2024 — O Milagre</h3>
-      <p>
-        O dia que nos conhecemos.
-        O dia em que algo encaixou.
-        O dia que, para mim, tudo começou de verdade.
-      </p>
+<section class="section" id="historia">
+    <h2>História</h2>
+    <p>
+        Tudo começou de forma inesperada.
+        Entre conversas, risadas e coincidências,
+        surgiu algo que nenhum dos dois sabia explicar,
+        mas que ambos sentiam.
+        Não foi pressa. Foi conexão.
+    </p>
+</section>
+
+<section class="section" id="memorias">
+    <h2>Memórias</h2>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/foto1.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto2.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto3.webp" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/foto4.webp" loading="lazy">
+        </div>
     </div>
-
-    <div class="timeline-item">
-      <h3>🛎 04/04/2025 — Abertura do Chamado</h3>
-      <p>
-        O dia oficialmente reconhecido pelo setor de relacionamento.
-        Protocolo aprovado.
-        Contrato emocional ativado.
-        Assinado: nós dois.
-      </p>
-    </div>
-  </div>
 </section>
 
-<section id="historia" class="section fade">
-  <h2>Nossa História (v1.0 → v∞)</h2>
-  <p>
-    Tudo começou sem roteiro, mas com aquela conexão que parecia código limpo e bem documentado.
-    Entre risadas, planos às 2h da manhã e abraços que resolvem tudo,
-    você virou rotina… depois prioridade… depois lar.
-  </p>
+<section class="section" id="motivos">
+    <h2>Motivos</h2>
+    <ol class="motivos-lista">
+        <li>Porque você me traz paz.</li>
+        <li>Porque escolhemos um ao outro todos os dias.</li>
+        <li>Porque crescemos juntos.</li>
+        <li>Porque o amor é leve quando é verdadeiro.</li>
+        <li>Porque nossa conexão não se explica, se sente.</li>
+    </ol>
 </section>
 
-<section id="galeria" class="section dark fade">
-  <h2>Nossos Logs de Felicidade</h2>
-  <div class="gallery">
-    <img src="assets/images/foto1.jpg" alt="">
-    <img src="assets/images/foto2.jpg" alt="">
-    <img src="assets/images/foto3.jpg" alt="">
-  </div>
+<section class="forever-section">
+    <button id="foreverBtn" class="forever-btn">forever.exe</button>
 </section>
 
-<section id="motivos" class="section fade">
-  <h2>10 Motivos (mas poderia ser infinito)</h2>
-  <ol>
-    <li>Porque você me olha como se eu fosse a melhor coisa do mundo.</li>
-    <li>Porque nossas piadas internas são patrimônio histórico.</li>
-    <li>Porque você me faz sentir segura.</li>
-    <li>Porque você transforma silêncio em conforto.</li>
-    <li>Porque seu cérebro programador é absurdamente sexy.</li>
-    <li>Porque você cuida dos detalhes invisíveis.</li>
-    <li>Porque você me escolhe todos os dias.</li>
-    <li>Porque nossos planos sempre incluem “a gente”.</li>
-    <li>Porque eu posso ser 100% eu com você.</li>
-    <li>Porque amar você é leve. E amor leve é milagre.</li>
-  </ol>
-
-  <button id="foreverBtn">Rodar Forever.exe</button>
-
-<div id="terminalOverlay">
-  <div class="terminalBox">
-    <pre id="terminalText"></pre>
-    <div id="finalMessage" class="hidden">
-      <h2>Futuro carregado com sucesso 💘</h2>
-      <p>
-        Prometo continuar escrevendo essa história com você.<br>
-        Sem bugs críticos.<br>
-        Apenas amor em deploy contínuo.
-      </p>
-      <button id="closeTerminal">Voltar para nós</button>
-    </div>
-  </div>
-</div>
-</section>
-
-<footer>
-  <p>Processo iniciado: Amor infinito 💘</p>
+<footer class="footer">
+    <p>© Aylla & Bruno</p>
 </footer>
+
+</div>
 
 <script src="script.js"></script>
 </body>
