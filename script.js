@@ -90,3 +90,14 @@ document.getElementById("foreverBtn").addEventListener("click", () => {
 document.getElementById("closeTerminal").addEventListener("click", () => {
   overlay.classList.remove("active");
 });
+
+// INTRO SCREEN
+const intro = document.getElementById("intro");
+const mainContent = document.getElementById("mainContent");
+const enterBtn = document.getElementById("enterSite");
+
+enterBtn.addEventListener("click", () => {
+    intro.style.opacity = "0";
+    intro.style.visibility = "hidden";
+    mainContent.classList.add("visible");
+});
