@@ -92,12 +92,18 @@ document.getElementById("closeTerminal").addEventListener("click", () => {
 });
 
 // INTRO SCREEN
+document.body.classList.add("intro-active");
+
 const intro = document.getElementById("intro");
 const mainContent = document.getElementById("mainContent");
 const enterBtn = document.getElementById("enterSite");
 
 enterBtn.addEventListener("click", () => {
     intro.style.opacity = "0";
-    intro.style.visibility = "hidden";
-    mainContent.classList.add("visible");
+
+    setTimeout(() => {
+        intro.style.display = "none";
+        document.body.classList.remove("intro-active");
+        mainContent.classList.add("visible");
+    }, 1200);
 });
