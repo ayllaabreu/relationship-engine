@@ -1,21 +1,32 @@
-// DATA DE INÍCIO (ano, mês-1, dia)
-const dataInicio = new Date(2025, 2, 2);
+// ===== CONTADORES =====
 
-function atualizarContador() {
+const dataConhecemos = new Date(2024, 10, 21); // 21/11/2024
+const dataOficial = new Date(2025, 3, 4);      // 04/04/2025
+
+function calcularTempo(data) {
   const agora = new Date();
-  const diff = agora - dataInicio;
+  const diff = agora - data;
 
   const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
   const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutos = Math.floor((diff / (1000 * 60)) % 60);
   const segundos = Math.floor((diff / 1000) % 60);
 
-  document.getElementById("contador").innerHTML =
-    `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos juntos 💖`;
+  return `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
 }
 
-setInterval(atualizarContador, 1000);
-atualizarContador();
+function atualizarContadores() {
+  const contador1 = document.getElementById("contadorConhecemos");
+  const contador2 = document.getElementById("contadorOficial");
+
+  if (contador1 && contador2) {
+    contador1.innerHTML = calcularTempo(dataConhecemos) + " juntos 💫";
+    contador2.innerHTML = calcularTempo(dataOficial) + " oficialmente 🛎";
+  }
+}
+
+setInterval(atualizarContadores, 1000);
+atualizarContadores();
 
 
 // Fade in ao rolar
