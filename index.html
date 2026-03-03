@@ -3,45 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bodas de Milagre — Aylla & Bruno</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
+<title>Bodas de Milagre - 1 Ano</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- LOADING TERMINAL -->
-<div id="loader">
-    <div class="terminal">
-        <p id="terminal-text"></p>
-    </div>
-</div>
-
-<!-- SITE -->
 <header>
-    <div class="logo">
-        Aylla & Bruno
-        <span>Bodas de Milagre — 1 ano</span>
-    </div>
-
-    <nav>
-        <ul>
-            <li>home()</li>
-            <li>historia.js</li>
-            <li>memorias.png</li>
-            <li>motivos.json</li>
-            <li>forever.exe</li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">✨ Bodas de Milagre</div>
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#historia">Nossa Lore</a></li>
+      <li><a href="#galeria">Deploy das Memórias</a></li>
+      <li><a href="#motivos">10 Motivos v1.0</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="hero">
-    <h1>Um ano atrás, o universo fez deploy da melhor versão da minha vida: nós.</h1>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Um ano atrás demos <span class="glow">git commit</span> em nós.</h1>
+    <p>E desde então estamos rodando a melhor versão da nossa história.</p>
+    <div id="contador"></div>
+  </div>
 </section>
 
-<script src="script.js"></script>
+<section id="historia" class="section fade">
+  <h2>Nossa História (v1.0 → v∞)</h2>
+  <p>
+    Tudo começou sem roteiro, mas com aquela conexão que parecia código limpo e bem documentado.
+    Entre risadas, planos às 2h da manhã e abraços que resolvem tudo,
+    você virou rotina… depois prioridade… depois lar.
+  </p>
+</section>
 
+<section id="galeria" class="section dark fade">
+  <h2>Nossos Logs de Felicidade</h2>
+  <div class="gallery">
+    <img src="assets/images/foto1.jpg" alt="">
+    <img src="assets/images/foto2.jpg" alt="">
+    <img src="assets/images/foto3.jpg" alt="">
+  </div>
+</section>
+
+<section id="motivos" class="section fade">
+  <h2>10 Motivos (mas poderia ser infinito)</h2>
+  <ol>
+    <li>Porque você me olha como se eu fosse a melhor coisa do mundo.</li>
+    <li>Porque nossas piadas internas são patrimônio histórico.</li>
+    <li>Porque você me faz sentir segura.</li>
+    <li>Porque você transforma silêncio em conforto.</li>
+    <li>Porque seu cérebro programador é absurdamente sexy.</li>
+    <li>Porque você cuida dos detalhes invisíveis.</li>
+    <li>Porque você me escolhe todos os dias.</li>
+    <li>Porque nossos planos sempre incluem “a gente”.</li>
+    <li>Porque eu posso ser 100% eu com você.</li>
+    <li>Porque amar você é leve. E amor leve é milagre.</li>
+  </ol>
+
+  <button id="foreverBtn">Rodar Forever.exe</button>
+
+<div id="terminalOverlay">
+  <div class="terminalBox">
+    <pre id="terminalText"></pre>
+    <div id="finalMessage" class="hidden">
+      <h2>Futuro carregado com sucesso 💘</h2>
+      <p>
+        Prometo continuar escrevendo essa história com você.<br>
+        Sem bugs críticos.<br>
+        Apenas amor em deploy contínuo.
+      </p>
+      <button id="closeTerminal">Voltar para nós</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Processo iniciado: Amor infinito 💘</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
